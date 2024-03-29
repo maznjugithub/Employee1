@@ -1,0 +1,76 @@
+﻿@{
+    ViewData["Title"] = "Add";
+}
+<form asp-controller="Employee" asp-action="Insert" asp-route-name="name" asp-route-address="address" asp-route-dateofbirth="dateofbirth" asp-route-contactno="contactno"
+asp-route-qualification="qualification" asp-route-previouscompanyname="previouscompanyname" asp-route-status="status" asp-route-action="action">
+	<label for="Name"> Name:</label><br>
+	   <input type="text" EmployeeID="name" name="name" placeholder="Name"><br>
+	<span style="color:red"> @ViewBag.errorname</span>
+	<br />
+	<label for="Address">Address:</label><br>
+	<input type="text" EmployeeID="address" name="address" placeholder="Address"><br>
+	<br/>
+	<label for="DateofBirth">DateofBirth:</label><br>
+	<input type="date" EmployeeID="dateofbirth" name="dateofbirth" placeholder="DateofBirth"><br>
+<br/>
+
+	<label for="ContactNo.">ContactNo:</label><br>
+	<input type="text" EmployeeID="contactno." name="contactno" placeholder="ContactNo."><br>
+		<br/>
+
+	<label for="Qualification">Qualification:</label><br>
+	<select EmployeeID="qualification" name="qualification" placeholder="Qualification"><br />
+		<option value="Undergraduate">Undergraduate</option>
+		<option value="Graduate">Graduate</option>
+		<option value="Master">Master</option>
+	</select>
+		<br/>
+
+	<label for="PreviousCompanyName">PreviousCompanyName:</label><br />
+	<input type="text" EmployeeID="previouscompanyname" name="previouscompanyname" placeholder="PreviousCompanyName">
+			<br/>
+
+			<label for="Status">Status:</label><br>
+	
+	@*<option value="Active">Active</option><br />
+	<option value="Inactive">Inactive</option>
+			<br />*@
+@*
+	<input checked="checked"
+		   employeeid="Active"
+		   name="Active"
+           address="Inactive"
+		   Contactno="Inactive"
+		   previous company name="Inactive"
+		   qualification="Active"
+		   type="checkbox"
+		   value="true" />
+		   <br />*@
+
+
+	<input data-val="true"
+		   data-val-required="The isActive field is required."
+		   employeeid="isActive"
+		   name="isActive"
+		   address="isactive"
+		   dateofbirth="iaactive"
+		   contactno="isactive"
+		   previouscompanyname="inactive"
+		   qualification="isactive"
+		   type="checkbox"
+		   value="true" />
+
+	<input name="isActive" type="hidden" value="false" />
+	<br />
+
+  <label for="Action">Action:</label><br>
+	<input type="text" EmployeeID="Action" name="Action" placeholder="Action"><br>
+	<br />
+
+	<button type="Submit" class="btn btn-success">Save</button>
+	 <input type="submit" name="submit_button" value="Cancel">   
+
+
+</form>
+
+

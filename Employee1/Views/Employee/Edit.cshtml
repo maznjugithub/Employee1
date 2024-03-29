@@ -1,0 +1,58 @@
+﻿
+@{
+	ViewData["Title"] = "Edit";
+}
+
+<form asp-controller="Employee" asp-action="Update" asp-route-name="name" asp-route-id="@ViewBag.EmployeeID" asp-route-address="address" asp-route-dateofbirth="dateofbirth" asp-route-contactno="contactno"
+	  asp-route-qualification="qualification" asp-route-previouscompanyname="previouscompanyname" asp-route-status="status" asp-route-action="action">
+	<label for="Name"> Name:</label><br>
+	<input type="text"EmployeeID="name" name="name" placeholder="Name" value="@ViewBag.name"><br>
+	<span style="color:red"> @ViewBag.errorname</span>
+	<br />
+	<label for="Address">Address:</label><br>
+	<input type="text" EmployeeID="address" name="address" placeholder="Address" value="@ViewBag.address"><br>
+	<br />
+	<label for="DateofBirth">DateofBirth:</label><br>
+	<input type="date" EmployeeID="dateofbirth" name="dateofbirth" placeholder="DateOfBirth" value="@ViewBag.dateofbirth"><br>
+	<br />
+
+	<label for="ContactNo">ContactNo:</label><br>
+	<input type="text" EmployeeID="ContactNo." name="ContactNo" placeholder="ContactNo." value="@ViewBag.contactno"><br>
+	<br />
+
+	<label for="Qualification">Qualification:</label><br>
+	<select EmployeeID="qualification" name="qualification" placeholder="Qualification" value="@ViewBag.qualification">
+		<br />
+		<option value="Undergraduate">Undergraduate</option>
+		<option value="Graduate">Graduate</option>
+		<option value="Master">Master</option>
+	</select>
+	<br />
+
+	<label for="previouscompanyname">previouscompanyname:</label><br />
+	<input type="text" EmployeeID="previouscompanyname" name="previouscompanyname" placeholder="PreviousCompanyName"><br />
+	<br />
+
+	<label for="status">status:</label><br>
+	<input data-val="true" 
+		   data-val-required="The isActive field is required."
+		   employeeid="isActive"
+		   name="isActive"
+		   address="isactive"
+		   dateofbirth="iaactive"
+		   contactno="isactive"
+		   previouscompanyname="inactive"
+		   qualification="isactive"
+		   type="checkbox"
+		   value="true" />
+
+	<input name="isActive" type="hidden" value="false" /><br />
+
+	<label for="Action">Action:</label><br>
+	<input type="text" EmployeeID="Action" name="Action" placeholder="Action"><br>
+	<br />
+	<button type="Submit" class="btn btn-success">Update</button>
+	<input type="submit" name="submit_button" value="Cancel">
+</form>
+
+

@@ -1,0 +1,75 @@
+﻿@model List<Employee1.Models.EmployeeViewModel>
+
+@{
+    ViewData["Title"] = "Employee Details";
+}
+<h3>@ViewData["Title"]</h3>
+<hr/>
+
+ <form asp-controller="Employee"asp-action="Add">
+
+        <button type="submit" class="btn btn-primary" >Add</button>
+
+  
+
+    <table class="table table-responsive table-hover">
+        <thead>
+            <tr class="table-active">
+                <th>S.N.</th>
+                <th>Name</th>
+                <th>Address</th>
+                <th>Date of Birth</th>
+                <th>Contact NO.</th>
+                <th>Qualification</th>
+                <th>Previous Company Name</th>
+                <th>Satus</th>
+                <th>Action</th>
+            </tr>
+        </thead>
+        <tbody>
+            @if (Model != null && Model.Any())
+            {
+                @foreach (var employee in Model)
+                {
+                    <tr>
+                        <td></td>
+                        <td>@employee.Name</td>
+                        <td>@employee.Address</td>
+                        <td>@employee.DateOfBirth.ToString("dd/mm/yyyy")</td>
+                        <td>@employee.ContactNo</td>
+                        <td>@employee.Qualification</td>
+                        <td>@employee.PreviousCompanyName</td>
+                        <td>@employee.Status</td>
+                        <td>
+                            <div class="btn-group btn-group-sm">
+                                <a type="Button" class="btn btn-success" asp-controller="Employee" asp-action="Edit" asp-route-EmployeeID="@employee.EmployeeID">Edit</a>
+
+                                @*<a asp-controller="Employee" asp-action="Edit" asp-route-id="@employee.EmployeeID" class="btn btn-primary">Edit</a>*@
+                              
+                                @*<a asp-controller="Employee" asp-action="Delete" asp-route-id="@employee.EmployeeID" class="btn btn-danger">Delete</a>*@
+                                @Html.ActionLink("Delete","Delete","Employee",new{@employee.EmployeeID},new{@class="btn btn-danger",onclick="return confirm('Do you really want to delete?')"})
+
+                            </div>
+                        </td>
+
+                    </tr>
+
+                }   
+            }
+            
+            else
+            {
+            <tr>
+                <td colspan="9">
+                    <div>
+                        No Employees available at this moment!
+                    </div>
+                </td>
+            </tr>
+
+            }
+             
+        </tbody>
+    </table>
+</form>
+

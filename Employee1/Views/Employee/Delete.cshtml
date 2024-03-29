@@ -1,0 +1,38 @@
+﻿
+@{
+	ViewData["Title"] = "Edit";
+}
+
+<form asp-controller="Employee" asp-action="Delete" asp-route-name="name" asp-route-id="@ViewBag.EmployeeID" asp-route-address="address" asp-route-DirthofBirth="Date of Birth" asp-route-contactNo="Contact No"
+	  asp-route-qualification="qualification" asp-route-perviouscompanyname="Pervious Company Name" asp-route-status="status">
+	<label for="Name"> Name:</label><br>
+	<input type="text"EmployeeID="name" name="name" placeholder="Name" value="@ViewBag.name"><br>
+	<span style="color:red"> @ViewBag.errorname</span>
+	<br />
+	<label for="address">Address:</label><br>
+	<input type="text" id="address" name="address" placeholder="Address" value="@ViewBag.address"><br>
+	<br />
+	<label for="Date of Birth"> Date of Birth:</label><br>
+	<input type="date" id="date of birth" name="Date of Birth" placeholder="Date Of Birth" value="@ViewBag.dateOfBirth"><br>
+	<br />
+
+	<label for="Contact No."> Contact No:</label><br>
+	<input type="text" id="Contact No." name="Contact No" placeholder="Contact No." value="@ViewBag.contactNo"><br>
+	<br />
+
+	<label for="Qualification">Qualification:</label><br>
+	<input type="checkbox" id="qualification" name="qualification" placeholder="Qualification" value="@ViewBag.qualification"><br>
+	<br />
+
+	<label for="Pervious Company Name"> Pervious Company Name:</label><br />
+	<input type="text" id="Pervious Company Name" placeholder="Pervious Company Name" value="@ViewBag.Pervious Company Name"><br />
+	<br />
+
+	<label for="status">statuss:</label><br>
+	<input type="checkbox" id="status" name="status" placeholder="status" value="@ViewBag.status"><br>
+	<br />
+
+	<button type="Submit" class="btn btn-success">Save</button>
+</form>
+
+
